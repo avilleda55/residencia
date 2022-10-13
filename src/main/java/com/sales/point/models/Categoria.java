@@ -27,6 +27,7 @@ public class Categoria implements Serializable{
     private String nombreCategoria;
 
     @OneToOne(mappedBy = "CATEGORIA")
-    private Productos user;
+    private Productos productos;
+    
     
 }
