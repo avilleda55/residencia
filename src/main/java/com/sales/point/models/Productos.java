@@ -43,4 +43,7 @@ public class Productos implements Serializable {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "categoria_id", referencedColumnName = "idCategoria")
     private Categoria categoria;
+
+    @OneToOne(mappedBy = "DETALLE_STOCK")
+    private DetalleStock detallestock;
 }
