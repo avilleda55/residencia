@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import lombok.Getter;
@@ -37,5 +38,7 @@ public class Productos implements Serializable {
     @Column(name = "imagen")
     private byte[] imagenProducto;
     
-    
+    @OneToOne
+
+    private Integer idCategoria; 
 }
