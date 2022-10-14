@@ -16,13 +16,12 @@ import org.springframework.web.bind.annotation.RestController;
 import com.sales.point.models.Usuario;
 import com.sales.point.services.IUsuariosService;
 
+
 @RestController
 @RequestMapping("store")
 @CrossOrigin(origins = "*")
 public class UsuariosController {
-    
-    @Autowired
-    IUsuariosService _IUService;
+    @Autowired IUsuariosService _IUService;
 
     @GetMapping("getUsers")
     public ResponseEntity<Object> getUsuarios() {

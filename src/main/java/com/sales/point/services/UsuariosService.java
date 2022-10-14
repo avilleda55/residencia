@@ -4,10 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.sales.point.models.Usuario;
 import com.sales.point.repositories.IUsuariosRepository;
 
+@Service
 public class UsuariosService implements IUsuariosService {
     
     @Autowired
