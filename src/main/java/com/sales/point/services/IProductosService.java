@@ -7,7 +7,7 @@ import com.sales.point.models.Productos;
 public interface IProductosService {
     List<Productos> getProductos();
     Productos getProducto(int id);
-    Productos agregarProductos();
+    Productos agregarProductos(String codigo, String nombre, String descripcion, Integer categoria);
     String actualizarProducto();
     Integer eliminarProducto();
     

@@ -18,38 +18,56 @@ public class ProductosService implements IProductosService{
 
     @Override
     public List<Productos> getProductos() {
-        // TODO Auto-generated method stub
+        
         try{
             List<Productos> listaProductos =  new ArrayList<>();
             listaProductos = _iproductos.findAll();
             return listaProductos;
 
         }catch(Exception e){
+            System.out.println("+++"+e.getMessage());
             return null;
         }
     }
 
     @Override
     public Productos getProducto(int id) {
-        // TODO Auto-generated method stub
-        return null;
+    
+        try{
+            Productos productos = _iproductos.findById(id).get();
+            return productos;
+
+        }catch(Exception e){
+            System.out.println("****"+e.getMessage());
+            return null;
+        }
     }
 
     @Override
-    public Productos agregarProductos() {
-        // TODO Auto-generated method stub
-        return null;
+    public Productos agregarProductos(String codigo, String nombre, String descripcion, Integer id_categoria) {
+        try {
+            Productos nuevo = new Productos();
+            nuevo.setCodigoProducto(codigo);
+            nuevo.setNombreProducto(nombre);
+            nuevo.setDescripcionProducto(descripcion);
+            nuevo.setId_categoria(id_categoria);
+            Productos productos  = _iproductos.saveAndFlush(nuevo);
+            return productos;
+        } catch (Exception e) {
+            System.out.println("+++"+e.getMessage());
+            return null;
+        }
     }
 
     @Override
     public String actualizarProducto() {
-        // TODO Auto-generated method stub
+        
         return null;
     }
 
     @Override
     public Integer eliminarProducto() {
-        // TODO Auto-generated method stub
+       
         return null;
     }
     

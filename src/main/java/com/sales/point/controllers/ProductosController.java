@@ -37,9 +37,9 @@ public class ProductosController {
     }
 
     @PostMapping("createProduct")
-    public ResponseEntity<Object> crearProducto(/*@RequestParam*/ ){
-       // Productos producto = _IPService.crearProducto(nombreAlimento, precioAlimento);
-        return null;//new  ResponseEntity<>(alimento, HttpStatus.CREATED);
+    public ResponseEntity<Object> crearProducto(@RequestParam String codigoProducto, String nombreProducto, String descripcionProducto, Integer id_categoria){
+       Productos producto = _IPService.agregarProductos(codigoProducto, nombreProducto, descripcionProducto, id_categoria);
+        return new  ResponseEntity<>(producto, HttpStatus.CREATED);
     }
 
 

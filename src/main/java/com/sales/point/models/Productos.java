@@ -2,16 +2,8 @@ package com.sales.point.models;
 
 import java.io.Serializable;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.Lob;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+
+import javax.persistence.*;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -19,11 +11,11 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name="PRODUCTOS")
+@Table(name = "PRODUCTOS")
 
 public class Productos implements Serializable {
     @Id
-    @Column(name="id")
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer idProducto;
 
@@ -39,11 +31,10 @@ public class Productos implements Serializable {
     @Lob
     @Column(name = "imagen")
     private byte[] imagenProducto;
-    
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "categoria_id", referencedColumnName = "idCategoria")
-    private Categoria categoria;
 
-    @OneToOne(mappedBy = "DETALLE_STOCK")
-    private DetalleStock detallestock;
+    @Column(name = "id_categoria")
+    private Integer id_categoria;
+
+
+
 }

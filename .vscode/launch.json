@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-PointApplication<point>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.sales.point.PointApplication",
+            "projectName": "point",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
