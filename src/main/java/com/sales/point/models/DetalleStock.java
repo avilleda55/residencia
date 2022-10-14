@@ -24,10 +24,6 @@ public class DetalleStock implements Serializable{
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer idDetalleS;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id_producto", referencedColumnName = "codigoProducto")
-    private String id_producto_DetalleS;
-
     @Column(name = "precio_c")
     private String precio_c_DetalleS;
 
@@ -36,5 +32,9 @@ public class DetalleStock implements Serializable{
 
     @Column(name = "cantidad")
     private String cantidad_DetalleS;
+    
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "id_producto", referencedColumnName = "codigoProducto")
+    private String id_producto_DetalleS;
 
 }
