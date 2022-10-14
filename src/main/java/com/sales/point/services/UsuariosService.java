@@ -42,10 +42,10 @@ public class UsuariosService implements IUsuariosService {
     }
 
     @Override
-    public Usuario agregarUsuario(Integer idUsuario, String username, String useraut, String useraddress, String usertelefono, String userrol) {
+    public Usuario agregarUsuario(String name, String username, String useraut, String useraddress, String usertelefono, String userrol) {
         try {
             Usuario nuevo = new Usuario();
-            nuevo.setIdUsuario(idUsuario);
+            nuevo.setName(name);
             nuevo.setUsername(username);
             nuevo.setUseraut(useraut);
             nuevo.setUseraddress(useraddress);
