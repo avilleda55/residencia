@@ -24,13 +24,13 @@ public class DetalleStock implements Serializable{
     private Integer idDetalleS;
 
     @Column(name = "precio_c")
-    private String precio_c_DetalleS;
+    private Float precio_c_DetalleS;
 
     @Column(name = "precio_v")
-    private String precio_v_DetalleS;
+    private Float precio_v_DetalleS;
 
     @Column(name = "cantidad")
-    private String cantidad_DetalleS;
+    private Integer cantidad_DetalleS;
     
     
     @Column(name = "producto_id")

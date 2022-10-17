@@ -8,6 +8,6 @@ public interface IUsuariosService {
     List<Usuario> getUsuarios();
     Usuario getUsuario(int id);
     Usuario agregarUsuario(String name, String username, String useraut, String useraddress, String usertelefono, String userrol);
-    String actualizarUsuario();
-    Integer eliminarUsuario();
+    String actualizarUsuario(int id,String name, String username, String useraut, String useraddress, String usertelefono, String userrol);
+    Integer eliminarUsuario(int id);
 }

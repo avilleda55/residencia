@@ -62,13 +62,26 @@ public class UsuariosService implements IUsuariosService {
     }
 
     @Override
-    public String actualizarUsuario() {
+    public String actualizarUsuario(int id,String name, String username, String useraut, String useraddress, String usertelefono, String userrol) {
         
-        return null;
+        try {
+            Usuario modificado = _iusuario.findById(id).get();
+            modificado.setName(name);
+            modificado.setUsername(username);
+            modificado.setUseraut(useraut);
+            modificado.setUseraddress(useraddress);
+            modificado.setUsertelefono(usertelefono);
+            modificado.setUserrol(userrol);
+             _iusuario.saveAndFlush(modificado);
+            return "Modificado";
+        } catch (Exception e) {
+            System.out.println("+++"+e.getMessage());
+            return "Error en la actualizacion";
+        }
     }
 
     @Override
-    public Integer eliminarUsuario() {
+    public Integer eliminarUsuario(int id) {
        
         return null;
     }
